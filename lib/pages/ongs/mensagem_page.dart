@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MensagemDoadorPage extends StatefulWidget {
-  const MensagemDoadorPage({Key? key}) : super(key: key);
+class MensagemOngPage extends StatefulWidget {
+  const MensagemOngPage({Key? key}) : super(key: key);
 
   @override
-  State<MensagemDoadorPage> createState() => _MensagemDoadorPageState();
+  State<MensagemOngPage> createState() => _MensagemOngPageState();
 }
 
-class _MensagemDoadorPageState extends State<MensagemDoadorPage> {
+class _MensagemOngPageState extends State<MensagemOngPage> {
 
- @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

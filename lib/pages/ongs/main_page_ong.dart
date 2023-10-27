@@ -1,3 +1,7 @@
+import 'package:doa_conecta_app/pages/ongs/doacoes_page_ong.dart';
+import 'package:doa_conecta_app/pages/ongs/explorar_page_ong.dart';
+import 'package:doa_conecta_app/pages/ongs/contatos_page_ong.dart';
+import 'package:doa_conecta_app/pages/ongs/perfil_page_ong.dart';
 import 'package:flutter/material.dart';
 //import 'package:trilhaapp/pages/pagina1.dart';
 //import 'pagina2.dart';
@@ -11,83 +15,60 @@ class MainPageOng extends StatefulWidget {
 }
 
 class _MainPageOngState extends State<MainPageOng> {
+  PageController controller = PageController(initialPage: 0);
+  int posicaoPagina = 0;
+
   @override
   Widget build(BuildContext context) {
-    int currentPageIndex = 0;
-
-    return Scaffold(
-
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: const Text("DoaConecta"),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        leadingWidth: 100.0,
-      ),
-
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: Theme.of(context).highlightColor,
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.handshake),
-            icon: Icon(Icons.handshake_outlined),
-            label: 'Donate',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.message),
-            icon: Icon(Icons.message_outlined),
-            label: 'Message',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.person),
-            icon: Icon(Icons.person_outlined),
-            label: 'Profile',
-          ),
-        ],
-      ),
-      
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SearchAnchor(
-            builder: (BuildContext context, SearchController controller) {
-          return SearchBar(
-            controller: controller,
-            padding: const MaterialStatePropertyAll<EdgeInsets>(
-                EdgeInsets.symmetric(horizontal: 16.0)),
-            onTap: () {
-              controller.openView();
-            },
-            onChanged: (_) {
-              controller.openView();
-            },
-            leading: const Icon(Icons.search),
-          );
-        }, suggestionsBuilder:
-                (BuildContext context, SearchController controller) {
-          return List<ListTile>.generate(5, (int index) {
-            final String item = 'item $index';
-            return ListTile(
-              title: Text(item),
-              onTap: () {
-                setState(() {
-                  controller.closeView(item);
-                });
+    return SafeArea(
+      child: Scaffold(
+        /*appBar: AppBar(
+          backgroundColor: Colors.green,
+          title: const Text("DoaConecta"),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          leadingWidth: 100.0,
+        ),*/
+        //drawer: CustonDrawer(),
+        body: Column(
+          children: [
+            Expanded(
+              child: PageView(
+                controller: controller,
+                onPageChanged: (value) {
+                  setState(() {
+                    posicaoPagina = value;
+                  });
+                },
+                children: const [
+                  ExplorarOngPage(),
+                  DoacaoOngPage(),
+                  ContatoPage(),
+                  PerfilOngPage()
+                ],
+              ),
+            ),
+            BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              onTap: (value) {
+                controller.jumpToPage(value);
               },
-            );
-          });
-        }),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+              currentIndex: posicaoPagina,
+              items: const [
+                BottomNavigationBarItem(
+                    label: "Explorar", icon: Icon(Icons.home)),
+                BottomNavigationBarItem(
+                    label: "Doação", icon: Icon(Icons.handshake)),
+                BottomNavigationBarItem(
+                    label: "Mensagens", icon: Icon(Icons.message)),
+                BottomNavigationBarItem(
+                    label: "Perfil", icon: Icon(Icons.person))
+              ],
+              selectedItemColor: Colors.green,
+            )
+          ],
+        ),
+      ),
     );
   }
 }

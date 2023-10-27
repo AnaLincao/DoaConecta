@@ -1,6 +1,6 @@
+import 'package:doa_conecta_app/pages/doador/contatos_page_doador.dart';
 import 'package:doa_conecta_app/pages/doador/doar_page_doador.dart';
 import 'package:doa_conecta_app/pages/doador/explorar_page_doador.dart';
-import 'package:doa_conecta_app/pages/doador/mensagem_page_doador_page.dart';
 import 'package:doa_conecta_app/pages/doador/perfil_page_doador.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +18,6 @@ class _MainPageDoadorState extends State<MainPageDoador> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: const Text("DoaConecta"),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-          leadingWidth: 100.0,
-        ),
-        //drawer: CustonDrawer(),
         body: Column(
           
           children: [
@@ -39,8 +31,8 @@ class _MainPageDoadorState extends State<MainPageDoador> {
                 },
                 children: const [
                   ExplorarDoadorPage(),
-                  MensagemDoadorPage(),
                   DoarDoadorPage(),
+                  ContatoPageDoador(),
                   PerfilDoadorPage()
                 ],
               ),

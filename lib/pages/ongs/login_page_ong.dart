@@ -15,7 +15,6 @@ class _LoginPageOngState extends State<LoginPageOng> {
   bool isObscureText = true;
   Color deepRed = const Color.fromARGB(255, 128, 0, 0);
 
-
   @override
   Widget build(BuildContext context) {
     AssetImage logoImage =
@@ -48,8 +47,7 @@ class _LoginPageOngState extends State<LoginPageOng> {
                           image: logoImage,
                           width: 120,
                           height: 170,
-                          alignment: Alignment.center
-                      ),
+                          alignment: Alignment.center),
                     ),
                     Expanded(child: Container()),
                   ],
@@ -90,8 +88,7 @@ class _LoginPageOngState extends State<LoginPageOng> {
                     decoration: const InputDecoration(
                         contentPadding: EdgeInsets.only(top: 0),
                         enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.green)),
+                            borderSide: BorderSide(color: Colors.green)),
                         focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 141, 79, 151))),
@@ -122,16 +119,14 @@ class _LoginPageOngState extends State<LoginPageOng> {
                     decoration: InputDecoration(
                         contentPadding: const EdgeInsets.only(top: 0),
                         enabledBorder: const UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.green)),
+                            borderSide: BorderSide(color: Colors.green)),
                         focusedBorder: const UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color:  Colors.green)),
+                            borderSide: BorderSide(color: Colors.green)),
                         hintText: "Senha",
                         hintStyle: const TextStyle(color: Colors.black),
                         prefixIcon: const Icon(
                           Icons.lock,
-                          color:  Colors.green,
+                          color: Colors.green,
                         ),
                         suffixIcon: InkWell(
                           onTap: () {
@@ -175,14 +170,15 @@ class _LoginPageOngState extends State<LoginPageOng> {
                           }
                         },
                         style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10))),
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.green),
-                              //definir tamanho botão
-                            minimumSize: MaterialStateProperty.all(const Size(200, 50)),
-                            ),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.green),
+                          //definir tamanho botão
+                          minimumSize:
+                              MaterialStateProperty.all(const Size(200, 50)),
+                        ),
                         child: const Text(
                           "ENTRAR",
                           style: TextStyle(
@@ -215,7 +211,8 @@ class _LoginPageOngState extends State<LoginPageOng> {
                   child: const Text(
                     "Criar conta",
                     style: TextStyle(
-                        color:  Color.fromARGB(255, 151, 21, 21),),
+                      color: Color.fromARGB(255, 151, 21, 21),
+                    ),
                   ),
                 ),
                 const SizedBox(

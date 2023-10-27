@@ -1,4 +1,3 @@
-
 import 'package:doa_conecta_app/pages/doador/login_page_doador.dart';
 import 'package:doa_conecta_app/pages/ongs/login_page_ong.dart';
 
@@ -12,8 +11,6 @@ class QuemSouEuPage extends StatefulWidget {
 }
 
 class _QuemSouEuPageState extends State<QuemSouEuPage> {
-
-
   @override
   Widget build(BuildContext context) {
     AssetImage logoImage =
@@ -42,8 +39,7 @@ class _QuemSouEuPageState extends State<QuemSouEuPage> {
                           image: logoImage,
                           width: 120,
                           height: 200,
-                          alignment: Alignment.center
-                      ),
+                          alignment: Alignment.center),
                     ),
                     Expanded(child: Container()),
                   ],
@@ -72,7 +68,7 @@ class _QuemSouEuPageState extends State<QuemSouEuPage> {
                 const SizedBox(
                   height: 50,
                 ),
-                
+
                 //--------------------- BOTÃO DOADOR---------------------//
                 Container(
                   width: double.infinity,
@@ -83,20 +79,21 @@ class _QuemSouEuPageState extends State<QuemSouEuPage> {
                     child: TextButton(
                         onPressed: () {
                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginPageDoador()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const LoginPageDoador()));
                         },
                         style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10))),
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.green),
-                            //definir tamanho botão
-                            minimumSize: MaterialStateProperty.all(const Size(200, 50)),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.green),
+                          //definir tamanho botão
+                          minimumSize:
+                              MaterialStateProperty.all(const Size(200, 50)),
                         ),
-                              
                         child: const Text(
                           "Doador",
                           style: TextStyle(
@@ -119,18 +116,19 @@ class _QuemSouEuPageState extends State<QuemSouEuPage> {
                     child: TextButton(
                         onPressed: () {
                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginPageOng()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginPageOng()));
                         },
                         style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10))),
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.green),
-                              //definir tamanho botão
-                            minimumSize: MaterialStateProperty.all(const Size(200, 50)),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.green),
+                          //definir tamanho botão
+                          minimumSize:
+                              MaterialStateProperty.all(const Size(200, 50)),
                         ),
                         child: const Text(
                           "ONG",

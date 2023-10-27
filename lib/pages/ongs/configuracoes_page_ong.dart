@@ -1,43 +1,17 @@
 import 'package:flutter/material.dart';
 
-class PerfilDoadorPage extends StatefulWidget {
-  const PerfilDoadorPage({Key? key}) : super(key: key);
-
-  @override
-  State<PerfilDoadorPage> createState() => _PerfilDoadorPageState();
-}
-
-class _PerfilDoadorPageState extends State<PerfilDoadorPage> {
+class ConfiguracoesOng extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: const Text("DoaConecta"),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-          leadingWidth: 100.0,
-        ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 40,
+        horizontal: 12,
+      ),
+
+      child: Column(
         children: <Widget>[
-          //----------------- IMAGEM USUARIO ------------------------//
-          const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage('assets/user_profile_image.jpg'),
-          ),
-          const SizedBox(height: 10),
-
-          //------------------------ NOME USUARIO ------------------------//
-          const Text(
-            'Nome do Usuário',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 50),
-
+          const SizedBox(height: 20),
           //------------------------ OPÇÃO MEUS DADOS ------------------------//
           buildProfileOption(
             title: 'Meus Dados',
@@ -84,6 +58,7 @@ class _PerfilDoadorPageState extends State<PerfilDoadorPage> {
     );
   }
 }
+
 Widget buildProfileOption({
   required String title,
   required IconData icon,

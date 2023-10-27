@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class ExplorarDoadorPage extends StatefulWidget {
-  const ExplorarDoadorPage({Key? key}) : super(key: key);
+class ExplorarOngPage extends StatefulWidget {
+  const ExplorarOngPage({Key? key}) : super(key: key);
 
   @override
-  State<ExplorarDoadorPage> createState() => _ExplorarDoadorPageState();
+  State<ExplorarOngPage> createState() => _ExplorarOngPageState();
 }
 
-class _ExplorarDoadorPageState extends State<ExplorarDoadorPage> {
+class _ExplorarOngPageState extends State<ExplorarOngPage> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.green,
-          title: const Text("DoaConecta"),
           centerTitle: true,
           automaticallyImplyLeading: false,
           leadingWidth: 100.0,
+          title: Text("DoaConecta"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

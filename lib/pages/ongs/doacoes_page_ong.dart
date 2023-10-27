@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DoarDoadorPage extends StatefulWidget {
-  const DoarDoadorPage({Key? key}) : super(key: key);
+class DoacaoOngPage extends StatefulWidget {
+  const DoacaoOngPage({Key? key}) : super(key: key);
 
   @override
-  State<DoarDoadorPage> createState() => _DoarDoadorPageState();
+  State<DoacaoOngPage> createState() => _DoacaoONGPageState();
 }
 //-------------CLASSE DOACAO-----------------------//
 class Donation {
@@ -16,7 +16,7 @@ class Donation {
   Donation(this.title, this.status, this.date, this.imageUrl);
 }
 
-class _DoarDoadorPageState extends State<DoarDoadorPage> {
+class _DoacaoONGPageState extends State<DoacaoOngPage> {
 
   //----------- CRIAR DOACOES ----------------------//
   final List<Donation> openDonations = [
@@ -59,7 +59,7 @@ class _DoarDoadorPageState extends State<DoarDoadorPage> {
                         : Colors.grey,
                     padding: EdgeInsets.all(10),
                     alignment: Alignment.center,
-                    child: Text('Doações Abertas'),
+                    child: Text('Doações a Recolher'),
                   ),
                 ),
               ),
@@ -77,7 +77,7 @@ class _DoarDoadorPageState extends State<DoarDoadorPage> {
                         : Colors.grey,
                     padding: EdgeInsets.all(10),
                     alignment: Alignment.center,
-                    child: Text('Doações Fechadas'),
+                    child: Text('Doações Recolhidas'),
                   ),
                 ),
               ),
@@ -117,23 +117,6 @@ class _DoarDoadorPageState extends State<DoarDoadorPage> {
                 );
               },
             ),
-          ),
-          //---------------------- BOTAO QUERO DOAR --------------------//
-          ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-              backgroundColor: MaterialStateProperty.all(Colors.green),
-              //definir tamanho botão
-              minimumSize: MaterialStateProperty.all(const Size(200, 50)),
-            ),
-            onPressed: () {
-              // Ação ao pressionar o botão "Quero doar"
-            },
-            child: Text('Quero doar'),
-          ),
-          const SizedBox(
-            height: 30,
           ),
         ],
       ),
